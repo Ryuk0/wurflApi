@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+	xmlns="http://java.sun.com/xml/ns/javaee"  
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"  
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"  
+	id="WebApp_ID" version="2.5">  
+
+	<display-name>wurflApi</display-name>       
+	
+	<welcome-file-list>           
+		<welcome-file>index.jsp</welcome-file>     
+	</welcome-file-list>      
+	
+	<!-- <context-param>     
+		<param-name>wurfl</param-name>     
+		<param-value>/WEB-INF/wurfl-2.3.1.xml</param-value>    
+	</context-param>    
+	
+	<context-param>     
+		<param-name>wurflHolderKey</param-name>     
+		<param-value>net.sourceforge.wurfl.core.WURFLHolder</param-value>    
+	</context-param>  -->
+	
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+
+	<!-- <listener>     
+		<listener-class>net.sourceforge.wurfl.core.web.WURFLServletContextListener</listener-class>  
+	</listener> -->
+
+	<servlet>         
+		<servlet-name>wurflApi</servlet-name>   
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>      
+		<load-on-startup>1</load-on-startup>   
+	</servlet>  
+	  
+	<servlet-mapping>     
+		<servlet-name>wurflApi</servlet-name>     
+		<url-pattern>*.cy</url-pattern>    
+	</servlet-mapping>  
+
+</web-app>
